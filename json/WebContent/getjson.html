@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 通过$getJSON 获取json代码</title>
+<script type="text/javascript" src="jquery/jquery.min.js"></script>
+</head>
+<body>
+<div id="ok"></div>
+<script>
+$(function(){ 
+$.getJSON("da.json",function(data){ 
+var $jsontip = $("#ok"); 
+var strHtml = "";//存储数据的变量 
+$jsontip.empty();//清空内容 
+$.each(data,function(infoIndex,info){
+    strHtml += "<a href='" + info["url"] + "' target='_blank'><img src='" + info["img"] + "' /></a>";
+}) 
+$jsontip.html(strHtml);//显示处理后的数据 
+}) 
+}) 
+</script>
+
+</body>
+</html>
